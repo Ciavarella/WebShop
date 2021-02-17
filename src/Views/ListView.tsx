@@ -1,4 +1,4 @@
-import '../Styles/ListView.css';
+import '../Styles/ListItem.css';
 import { Item } from '../Api/types';
 import ListItem from '../Components/ListItem';
 import Spinner from '../Components/Spinner';
@@ -18,9 +18,11 @@ const ListView = () => {
 
   return (
     <div className="home">
-      {Items.length > 1 ? Items.map((item, index): JSX.Element =>
-        <ListItem key={index} item={item} />
-      ) : <Spinner />}
+      <div className="img-container">
+        {Items.length > 1 ? Items.map((item, index): JSX.Element =>
+          <ListItem key={index} item={item} />
+        ) : <Spinner />}
+      </div>
     </div>
   );
 }

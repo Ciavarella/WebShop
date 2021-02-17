@@ -1,0 +1,24 @@
+.home {
+  width: 70%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.img-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.item-container {
+  display: flex;
+  height: max-content;
+}
+
+img {
+  height: 15rem;
+  width: 15rem;
+}

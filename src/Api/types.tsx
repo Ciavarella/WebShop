@@ -3,6 +3,7 @@ export interface Item {
   name: String,
   brand: String,
   price: String,
+  picture: String,
   available: Boolean,
   weight: Number,
   options: Array<Options>

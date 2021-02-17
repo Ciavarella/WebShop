@@ -5,6 +5,7 @@
       "name": "Philips hue bulb",
       "brand": "Philips",
       "price": "500",
+      "picture": "https://www.philips-hue.com/content/dam/hue/masters/products-overview/bulbs/hue-bulbs-4-3.jpg",
       "available": true,
       "weight": 0.2,
       "options": [
@@ -24,6 +25,7 @@
       "name": "Trådfria Lampor",
       "brand": "IKEA",
       "price": "300",
+      "picture": "https://www.ikea.com/images/tradfri-smart-belysning-led-ljuskaellor-med-gateway-app-och--7d30d6adc2e2cb6390ffdbb4fe08be97.jpg?f=l",
       "available": true,
       "weight": 0.2,
       "options": [
@@ -49,6 +51,7 @@
       "name": "Playstation 4",
       "brand": "Sony",
       "price": "5000",
+      "picture": "https://scale.coolshop-cdn.com/product-media.coolshop-cdn.com/AJ6BX3/2ed30882cbd24433a5d00617631e3bf6.jpeg/f/sony-playstation-4-console-500-gb-edition-jet-black.jpeg",
       "available": true,
       "weight": 2.1,
       "options": [
@@ -69,6 +72,7 @@
       "name": "Nintendo switch",
       "brand": "Nintendo",
       "price": "4500",
+      "picture": "https://www.komplett.se/img/p/1200/1135270.jpg",
       "available": true,
       "weight": 1.6,
       "options": [
@@ -94,6 +98,7 @@
       "name": "Bluetooth speaker",
       "brand": "JBL",
       "price": "800",
+      "picture": "https://images-na.ssl-images-amazon.com/images/I/91HnLmz7bsL._AC_SL1500_.jpg",
       "available": false,
       "weight": 0.5,
       "options": [
@@ -116,6 +121,7 @@
       "name": "Bluetooth speaker",
       "brand": "Marshall",
       "price": "950",
+      "picture": "https://www.londondrugs.com/on/demandware.static/-/Sites-londondrugs-master/default/dw1409a97e/products/M0004826/large/M0004826.JPG",
       "available": true,
       "weight": 0.5,
       "options": [
@@ -138,6 +144,7 @@
       "name": "Electrical toothbrush",
       "brand": "BRAUN",
       "price": "950",
+      "picture": "https://images-na.ssl-images-amazon.com/images/I/61vQOxyx6qL._SL1376_.jpg",
       "available": false,
       "weight": 0.4,
       "options": [
@@ -156,6 +163,7 @@
       "name": "Samsung 40 UHD Smart TV",
       "brand": "SAMSUNG",
       "price": "3200",
+      "picture": "https://images-na.ssl-images-amazon.com/images/I/61rBRcy%2Bi1L._AC_SL1000_.jpg",
       "available": true,
       "weight": 8.2,
       "options": [
@@ -170,6 +178,7 @@
       "name": "BenQ GW2765HE Eye-Care",
       "brand": "BenQ",
       "price": "2700",
+      "picture": "https://img.productz.com/2183074/benq-gw2470he-74-preview.jpg",
       "available": false,
       "weight": 3.9,
       "options": [
@@ -184,6 +193,7 @@
       "name": "Corsair HS60 gaming headset",
       "brand": "Corsair",
       "price": "1200",
+      "picture": "https://www.corsair.com/medias/sys_master/images/images/h44/h49/9325921402910/-CA-9011214-EU-Gallery-HS60-PRO-YELLOW-01.png",
       "available": true,
       "weight": 0.8,
       "options": [

@@ -1,3 +1,4 @@
+import '../Styles/ListItem.css';
 import { Item } from '../Api/types';
 
 interface ListItemProp {
@@ -6,7 +7,9 @@ interface ListItemProp {
 
 const ListItem = (data: ListItemProp) => {
   return (
-    <p>{data.item.name}</p>
+    <div className="item-container">
+      <img src={data.item.picture} alt={data.item.name} />
+    </div>
   )
 }
 

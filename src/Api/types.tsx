@@ -1,17 +1,17 @@
 export interface Item {
   id: Number,
-  name: String,
-  brand: String,
-  price: String,
-  picture: String,
+  name: string,
+  brand: string,
+  price: string,
+  picture: string,
   available: Boolean,
   weight: Number,
   options: Array<Options>
 };
 
 export interface Options {
-  color: String | Array<String>,
+  color: string | Array<string>,
   quantity: Number,
-  storage?: Array<String>,
+  storage?: Array<string>,
   power?: Array<Number>
 };

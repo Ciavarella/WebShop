@@ -1,14 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
+import Header from './Components/Header';
+import ItemDetails from './Components/ItemDetails';
 import reportWebVitals from './reportWebVitals';
 import { Switch, Route, BrowserRouter } from 'react-router-dom'
 
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
+        <Header />
       <Switch>
-        <Route path="/" exact component={App} />
+        <Route exact path="/" component={App} />
+        <Route path="/details/:id" component={ItemDetails} />
       </Switch>
     </BrowserRouter>
   </React.StrictMode>,

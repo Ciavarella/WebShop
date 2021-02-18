@@ -1,6 +1,6 @@
 import '../Styles/Header.css';
 
-const Header = () => {
+const Header = (): JSX.Element => {
   return (
     <div className="header">
       <p>Home</p>

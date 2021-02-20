@@ -1,9 +1,12 @@
 import '../Styles/Header.css';
+import { Link } from 'react-router-dom';
 
 const Header = (): JSX.Element => {
   return (
     <div className="header">
-      <p>Home</p>
+      <Link to="/">
+        <p>Home</p>
+      </Link>
       <p>Checkout</p>
     </div>
   );

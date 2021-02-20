@@ -9,11 +9,18 @@ const ListView = () => {
   const [Items, SetItems] = useState<Item[]>([]);
 
   useEffect(() => {
+    let mounted: Boolean = true;
     const getItems = async () => {
       const res: any = await getAllItems();
-      SetItems(res);
+      if(mounted) {
+        SetItems(res);
+      }
     };
     getItems();
+
+    return function cleanUp(): void {
+      mounted = false;
+    }
   });
 
   return (

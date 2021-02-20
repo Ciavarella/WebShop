@@ -21,8 +21,8 @@
 }
 
 img {
-  height: 15rem;
-  width: 15rem;
+  height: 13rem;
+  width: 13rem;
   position: relative;
   transition: all 0.5s;
   filter: grayscale(100%);

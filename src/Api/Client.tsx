@@ -13,4 +13,12 @@ const getItemById = async (id: Number): Promise<Item> =>
   setTimeout(() => res ? resolve(res) : reject('Could not find product'), 1500);
 });
 
-export { getAllItems, getItemById }
+const addItemToCart = async (amount: any, extra: any, id: Number) => {
+  const item = mockData.filter(e => e.id === id);
+  console.log("item", item);
+  return new Promise((resolve) => {
+    setTimeout(() => resolve(item), 1500); 
+  });
+}
+
+export { getAllItems, getItemById, addItemToCart }

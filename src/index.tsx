@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
+import Checkout from './Views/Checkout';
 import Header from './Components/Header';
 import ItemDetails from './Components/ItemDetails';
 import reportWebVitals from './reportWebVitals';
@@ -13,6 +14,7 @@ ReactDOM.render(
       <Switch>
         <Route exact path="/" component={App} />
         <Route path="/details/:id" component={ItemDetails} />
+        <Route path="/checkout" component={Checkout} />
       </Switch>
     </BrowserRouter>
   </React.StrictMode>,

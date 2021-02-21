@@ -8,7 +8,7 @@ import { useParams } from "react-router-dom";
 interface TempCartDetails {
   id: Number,
   extra: any,
-  amount: string,
+  amount: number,
 }
 
 const ItemDetails = (): JSX.Element => {
@@ -66,7 +66,7 @@ const ItemDetails = (): JSX.Element => {
                     name="amount"
                     type="number"
                     min="0"
-                    onChange={e => SetTempCart({amount: e.target.value, extra: option.color, id: Details.id})}
+                    onChange={e => SetTempCart({amount: parseInt(e.target.value), extra: option.color, id: Details.id})}
                     max={option.quantity.toString()}
                     />
                 </label>

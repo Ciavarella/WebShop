@@ -7,3 +7,22 @@
   background: linear-gradient(#1b8847,#2ac768);
   justify-content: space-evenly;
 }
+
+.checkout {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.amount-container {
+  display: table;
+}
+
+span {
+  background-color: red;
+  border-radius: 50%;
+  width: 1rem;
+  height: 1rem;
+  text-align: center;
+  display: table-cell;
+  vertical-align: middle;
+}

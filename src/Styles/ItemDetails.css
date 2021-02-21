@@ -29,7 +29,7 @@ button {
   display: flex;
   margin-top: 2rem;
   margin-bottom: 2rem;
-  justify-content: space-evenly;
+  justify-content: center;
 }
 
 .grey {
@@ -39,6 +39,8 @@ button {
 .product {
   display: flex;
   align-items: center;
+  margin-left: 1rem;
+  margin-right: 1rem;
   flex-direction: column;
 }
 

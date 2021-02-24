@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 import { useCartDispatch } from '../Store/Store';
 import Spinner from '../Components/Spinner';
 import { Item } from '../Api/types';
-import { useParams } from "react-router-dom";
+import { useParams } from 'react-router-dom';
 
 interface TempCartDetails {
   id: Number,
@@ -26,9 +26,18 @@ const ItemDetails = (): JSX.Element => {
     getDetails(params);
   },[params]);
 
-  const addToCart = (event: any) => {
-    event.preventDefault();
+  const addToCart = () => {
     dispatch({ type: 'addToCart', payload: TempCart })
+  }
+
+  const changeColor = (e: any, option: any): void => {
+    console.log('option', option);
+    // SetTempCart here but just the extra params.
+    let cards = document.querySelectorAll('.card');
+    Array.prototype.forEach.call(cards, function(card) {
+      card.style.border = '2px solid black';
+    });
+    e.target.style.border = '2px solid #6fd296';
   }
 
   const style = {
@@ -42,27 +51,35 @@ const ItemDetails = (): JSX.Element => {
         <h1>{Details.brand}</h1>
         <h2>{Details.name}</h2>
         <div className={Details.available ? "product-container" : "product-container grey"}>
-          {Details.options.map((option, index) => (
-            <div className="product" key={index}>
+            <div className="product">
               <img className="color" src={Details.picture} alt="Product" />
+              <p>Options:</p>
               <div className="text-container">
-                <p>Left in stock: {option.quantity}</p>
-                {/* Need to check storage and other options here */}
-                <p>Color: {option.color}</p>
-                <label>
+                {Details.options.map((option, index) => (
+                  <div key={index} onClick={(e) => {changeColor(e, option)}} className="card">
+                    {option.color ? <p>Color: {option.color}</p> : ''}
+                    {option.storage ? option.storage.map(el => (
+                      <p key={el + 1}>Storage: {el}</p>
+                    )) : ''}
+                    {option.power ? option.power.map(el => (
+                      <p key={el + "1"}>Power: {el}</p>
+                    )) : ''}
+                    <p>Quantity: {option.quantity}</p>
+                  </div>
+                ))}
+              </div>
+              <label>
                 Amount: 
                   <input
                     name="amount"
                     type="number"
                     min="0"
-                    onChange={e => SetTempCart({amount: parseInt(e.target.value), extra: option.color, id: Details.id})}
-                    max={option.quantity.toString()}
+                    // onChange={e => SetTempCart({amount: parseInt(e.target.value), extra: option.color, id: Details.id})}
+                    // max={option.quantity.toString()}
                     />
                 </label>
-                <button onClick={addToCart}>{Details.available ? "Add to Card" : "Unavailable"}</button>
-              </div>
+              <button onClick={addToCart}>{Details.available ? "Add to Card" : "Unavailable"}</button>
             </div>
-          ))}
         </div>
         <h2 style={style}>Specifications</h2>
         <div>

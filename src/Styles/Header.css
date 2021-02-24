@@ -20,6 +20,7 @@
 span {
   background-color: red;
   border-radius: 50%;
+  font-size: 0.7rem;
   width: 1rem;
   height: 1rem;
   text-align: center;

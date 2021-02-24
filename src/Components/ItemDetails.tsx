@@ -1,6 +1,7 @@
 import '../Styles/ItemDetails.css';
-import { getItemById, addItemToCart } from '../Api/Client';
+import { getItemById } from '../Api/Client';
 import { useEffect, useState } from 'react';
+import { useCartDispatch } from '../Store/Store';
 import Spinner from '../Components/Spinner';
 import { Item } from '../Api/types';
 import { useParams } from "react-router-dom";
@@ -14,32 +15,20 @@ interface TempCartDetails {
 const ItemDetails = (): JSX.Element => {
   const [Details, SetDetails] = useState<Item | null>(null);
   const [TempCart, SetTempCart] = useState<TempCartDetails | null>(null);
-
+  const dispatch: any = useCartDispatch();
   let params = useParams();
 
   useEffect(() => {
-    let mounted: Boolean = true;
-
     const getDetails = async (params: any) => {
       const res: Item | string = await getItemById(parseInt(params.id));
-      if (mounted) {
         SetDetails(res);
-      }
     };
     getDetails(params);
+  },[params]);
 
-    return function cleanUp(): void {
-      mounted = false;
-    };
-  });
-
-  const addToCart = async () => {
-    if(TempCart) {
-      const res = await addItemToCart(TempCart.amount, TempCart.extra, TempCart.id);
-      console.log("res", res);
-    } else {
-      return;
-    }
+  const addToCart = (event: any) => {
+    event.preventDefault();
+    dispatch({ type: 'addToCart', payload: TempCart })
   }
 
   const style = {

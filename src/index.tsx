@@ -5,19 +5,20 @@ import Checkout from './Views/Checkout';
 import Header from './Components/Header';
 import ItemDetails from './Components/ItemDetails';
 import reportWebVitals from './reportWebVitals';
+import { CartProvider } from './Store/Store';
 import { Switch, Route, BrowserRouter } from 'react-router-dom'
 
 ReactDOM.render(
-  <React.StrictMode>
-    <BrowserRouter>
-        <Header />
-      <Switch>
-        <Route exact path="/" component={App} />
-        <Route path="/details/:id" component={ItemDetails} />
-        <Route path="/checkout" component={Checkout} />
-      </Switch>
-    </BrowserRouter>
-  </React.StrictMode>,
+    <CartProvider>
+      <BrowserRouter>
+          <Header />
+        <Switch>
+          <Route exact path="/" component={App} />
+          <Route path="/details/:id" component={ItemDetails} />
+          <Route path="/checkout" component={Checkout} />
+        </Switch>
+      </BrowserRouter>
+    </CartProvider>,
   document.getElementById('root')
 );
 

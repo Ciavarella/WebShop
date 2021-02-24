@@ -1,13 +1,11 @@
 import '../Styles/Header.css';
 import { Link } from 'react-router-dom';
-import { useEffect, useState } from 'react'
+import { useCartState } from '../Store/Store';
+import { useEffect } from 'react'
 
 const Header = (): JSX.Element => {
-  const [Amount, SetAmount] = useState<any>(0);
-  
-  useEffect(() => {
-    SetAmount(0);
-  }, [])
+  const { cart }  = useCartState();
+  useEffect(() => {},[cart]);
 
   return (
     <div className="header">
@@ -17,7 +15,7 @@ const Header = (): JSX.Element => {
       <Link to="/checkout">
         <div className="checkout">
           <div className="amount-container">
-            <span>{Amount}</span>
+            <span>{cart.length}</span>
           </div>
           <p>Checkout</p>
         </div>

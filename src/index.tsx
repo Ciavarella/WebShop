@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import App from './App';
 import Checkout from './Views/Checkout';
 import Header from './Components/Header';
-import ItemDetails from './Components/ItemDetails';
+import ItemDetails from './Views/ItemDetails';
 import reportWebVitals from './reportWebVitals';
 import { CartProvider } from './Store/Store';
 import { Switch, Route, BrowserRouter } from 'react-router-dom'

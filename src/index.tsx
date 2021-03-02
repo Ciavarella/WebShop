@@ -16,6 +16,7 @@ ReactDOM.render(
           <Route exact path="/" component={App} />
           <Route path="/details/:id" component={ItemDetails} />
           <Route path="/checkout" component={Checkout} />
+          <Route path="/*" component={App} />
         </Switch>
       </BrowserRouter>
     </CartProvider>,

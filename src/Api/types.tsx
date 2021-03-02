@@ -13,5 +13,5 @@ export interface Options {
   color: string | Array<string>,
   quantity: Number,
   storage?: Array<string>,
-  power?: Array<Number>
+  power?: Array<number>
 };

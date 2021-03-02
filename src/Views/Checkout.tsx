@@ -1,30 +1,54 @@
-import { getCart } from '../Api/Client';
-import { useEffect, useState } from 'react';
+import { useCartState, useCartDispatch } from '../Store/Store';
+import '../Styles/Checkout.css';
 
 const Checkout = (): JSX.Element => {
-  const [Cart, SetCart] = useState<any | null>([])
+  const { cart } = useCartState();
+  const dispatch: any = useCartDispatch();
 
-  useEffect(() => {
-    let mounted: Boolean = true;
-    const getCartProducts = async () => {
-      const res = await getCart();
-      if(mounted) {
-        SetCart(res);
-      }
-    };
-    getCartProducts();
+  const decrementQuantity = (id: number): void => {
+    dispatch({ type: 'decrementQuantity', payload: id });
+  }
 
-  // console.log('carthere', Cart);
-    return function cleanUp(): void {
-      mounted = false;
-    }
-  });
+  const incrementQuantity = (id: number): void => {
+    dispatch({ type: 'incrementQuantity', payload: id });
+  }
 
+  const removeProduct = (id: number): void => {
+    dispatch({ type: 'removeProduct', payload: id });
+  }
 
   return (
-    <div className="home">
-      <div className="detail-container">
-        <p>Hello</p>
+    <div className="App">
+      <div className="checkout-container">
+        <h2>Checkout</h2>
+        <div className="column">
+          {cart.length >= 1 ?
+            <div className="row">
+              {cart.map((element: any, index: number) =>
+                <div key={index}>
+                    <img className="color" alt={element.name} src={element.picture} />
+                    <p>{element.name}</p>
+                    <div className="quantity-wrapper">
+                      <button onClick={() => decrementQuantity(element.id)}>-</button>
+                      <p>{element.amount}</p>
+                      <button onClick={() => incrementQuantity(element.id)}>+</button>
+                    </div>
+                    {element.power !== 0 ?
+                      <p>Power: {element.power}</p>
+                    : '' }
+                    {element.storage !== '' ?
+                      <p>Storage: {element.storage}</p>
+                    : '' }
+                    <p>Color: {element.extra.color}</p>
+                    <button onClick={() => removeProduct(element.id)}>Remove</button>
+                </div> )}
+            </div>
+             : <p>No items in your cart</p> }
+             {cart.length >= 1 ? 
+              <div className="mg-top">
+                <button>Go to payment</button>
+              </div> : '' }
+        </div>
       </div>
     </div>
   )

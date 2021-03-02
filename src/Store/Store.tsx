@@ -12,7 +12,23 @@ function stateReducer(state: any, action: any) {
   switch (action.type) {
     case 'addToCart':
       state.cart.push(action.payload);
-      return { ...state }
+      return { ...state };
+    case 'incrementQuantity':
+      const index = state.cart.findIndex((e: any) => e.id === action.payload);
+      state.cart[index].amount = state.cart[index].amount + 1;
+      return { ...state };
+    case 'decrementQuantity':
+      const i = state.cart.findIndex((e: any) => e.id === action.payload);
+      if(state.cart[i].amount === 1) {
+        state.cart.splice(i, 1);
+        return { ...state };
+      }
+      state.cart[i].amount = state.cart[i].amount - 1;
+      return { ...state };
+    case 'removeProduct':
+      const j = state.cart.findIndex((e: any) => e.id === action.payload);
+      state.cart.splice(j, 1);
+      return { ...state };
     default:
       throw new Error();
   }

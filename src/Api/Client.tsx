@@ -20,17 +20,15 @@ const addItemToCart = async (amount: number, extra: any, id: Number) => {
   });
 };
 
-const getCart = async (): Promise<Array<[]>> =>
-  new Promise<any>((resolve, reject) => {
-    const res = [{
-      id: 1,
-      name: "someNameHere",
-      extra: {
-        color: 'red',
-        storage: 256
-      }
-    }];
-    setTimeout(() => resolve(res), 1500);
-});
+const getCartDetails = async (cart: any): Promise<Array<[]>> => {
+  let result: Array<Item> = [];
+  for (let i = 0; i < cart.length; i++) {
+    const obj = mockData.filter(el => el.id === cart[i].id);
+    result.push(obj[0]);
+  };
+  return new Promise<any>((resolve, reject) => {
+    setTimeout(() => resolve(result), 1500);
+  });
+}
 
-export { getAllItems, getItemById, addItemToCart, getCart }
+export { getAllItems, getItemById, addItemToCart, getCartDetails }

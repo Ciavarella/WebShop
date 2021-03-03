@@ -17,6 +17,14 @@ const Checkout = (): JSX.Element => {
     dispatch({ type: 'removeProduct', payload: id });
   }
 
+  const calcTotal = (): void => {
+    let total: number = 0;
+    cart.forEach((product: any) => {
+      total += product.price * product.amount;
+    });
+    alert(`Your total price is ${total}`);
+  }
+
   return (
     <div className="App">
       <div className="checkout-container">
@@ -46,7 +54,7 @@ const Checkout = (): JSX.Element => {
              : <p>No items in your cart</p> }
              {cart.length >= 1 ? 
               <div className="mg-top">
-                <button>Go to payment</button>
+                <button onClick={calcTotal}>Go to payment</button>
               </div> : '' }
         </div>
       </div>

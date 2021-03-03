@@ -174,7 +174,7 @@ const ItemDetails = (): JSX.Element => {
                       />
                   </label>
               : '' }
-              <button onClick={addToCart}>{Details.available ? "Add to Card" : "Unavailable"}</button>
+              <button onClick={addToCart}>{Details.available ? "Add to Cart" : "Unavailable"}</button>
             </div>
         </div>
         <h2 style={style}>Specifications</h2>

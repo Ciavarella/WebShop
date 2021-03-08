@@ -1,4 +1,4 @@
-import { getByRole, render, screen } from '@testing-library/react';
+import { render } from '@testing-library/react';
 import { MemoryRouter } from 'react-router';
 import ListView from './ListView';
 
@@ -30,6 +30,4 @@ describe('ListView', () => {
     const parent = container.firstChild;
     expect(parent?.firstChild).toHaveClass('img-container');
   });
-
-
 });

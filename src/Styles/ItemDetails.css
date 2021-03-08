@@ -69,6 +69,10 @@ label {
   pointer-events: none;
 }
 
+.card > div {
+  pointer-events: none;
+}
+
 select {
   border: 1px solid black !important;
 }

@@ -26,7 +26,7 @@ const ListView = () => {
   return (
     <div className="home">
       <div className="img-container">
-        {Items.length > 1 ? Items.map((item, index): JSX.Element =>
+        {Items.length >= 1 ? Items.map((item, index): JSX.Element =>
           <ListItem key={index} item={item} />
         ) : <Spinner />}
       </div>
